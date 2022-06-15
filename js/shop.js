@@ -84,7 +84,7 @@ function buy(id) {
     // 2. Add found product to the cartList array
 
     console.log(cartList);
-    console.log("Total = " + calculateTotal());
+    alert(calculateTotal());
 
 }
 
@@ -97,6 +97,7 @@ function cleanCart() {
 // Exercise 3
 function calculateTotal() {
     // Calculate total price of the cart using the "cartList" array
+    total = 0;
     for (let i = 0; i < cartList.length; i++) {
         total += cartList[i].price;
     }
@@ -107,6 +108,18 @@ function calculateTotal() {
 function generateCart() {
     // Using the "cartlist" array that contains all the items in the shopping cart, 
     // generate the "cart" array that does not contain repeated items, instead each item of this array "cart" shows the quantity of product.
+
+    for (let i = 0; i < cartList.length; i++) {
+        if (!cart.includes(cartList[i])) {
+            cartList[i].quantity = 1;
+            cartList[i].subtotal = cartList[i].quantity * cartList[i].price;
+            cart.push(cartList[i]);
+        } else {
+            cartList[i].quantity += 1;
+            cartList[i].subtotal = cartList[i].quantity * cartList[i].price;
+        }
+    }
+    console.log(cart);
 }
 
 // Exercise 5
@@ -139,3 +152,4 @@ function open_modal() {
     console.log("Open Modal");
     printCart();
 }
+
