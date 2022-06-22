@@ -71,42 +71,44 @@ var cart = [];
 
 var total = 0;
 
+var accItems = 0;
+
 
 
 // Exercise 1
 function buy(id) {
     // 1. Loop for to the array products to get the item to add to cart
+    let item;
     for (let i = 0; i < products.length; i++) {
-        if (products[i].id == id) {
-            cartList.push(products[i]);
+        if (products[i].id === id) {
+            item = products[i];
         }
     }
     // 2. Add found product to the cartList array
-
+    cartList.push(item);
     console.log(cartList);
-    document.getElementById("total_price").innerHTML = calculateTotal();
-    document.getElementById("count_product").innerHTML = cartList.length;
+    document.getElementById('count_product').innerHTML = ++accItems;
+    generateCart();
 
 }
 
 // Exercise 2
 function cleanCart() {
     total = 0;
-    //cartList.splice(0);
+    accItems = 0;
     cartList = [];
     cart = [];
     document.getElementById("total_price").innerHTML = 0;
     document.getElementById("cart_list").innerHTML = "";
     document.getElementById("count_product").innerHTML = 0;
-
 }
 
 // Exercise 3
 function calculateTotal() {
     // Calculate total price of the cart using the "cartList" array
     total = 0;
-    for (let i = 0; i < cartList.length; i++) {
-        total += cartList[i].price;
+    for (let i = 0; i < cart.length; i++) {
+        total += cart[i].subtotal;
     }
     return total;
 }
@@ -126,6 +128,8 @@ function generateCart() {
             cartList[i].subtotal = cartList[i].quantity * cartList[i].price;
         }
     }
+    cartList = [];
+    document.getElementById("total_price").innerHTML = calculateTotal();
     console.log(cart);
 }
 
@@ -137,6 +141,25 @@ function applyPromotionsCart() {
 // Exercise 6
 function printCart() {
     // Fill the shopping cart modal manipulating the shopping cart dom
+    const tableTag = document.getElementById('cart_list');
+    tableTag.innerHTML = '';
+    for (let i = 0; i < cart.length; i++) {
+        const table = document.createElement('tr');
+
+        const itemName = document.createElement('th');
+        itemName.textContent = cart[i].name;
+
+        const itemPrice = document.createElement('td');
+        itemPrice.textContent = cart[i].price;
+
+        const itemQuantity = document.createElement('td');
+        itemQuantity.textContent = cart[i].quantity;
+
+        tableTag.appendChild(table);
+        table.appendChild(itemName);
+        table.appendChild(itemPrice);
+        table.appendChild(itemQuantity);
+    }
 }
 
 
