@@ -84,14 +84,21 @@ function buy(id) {
     // 2. Add found product to the cartList array
 
     console.log(cartList);
-    alert(calculateTotal());
+    document.getElementById("total_price").innerHTML = calculateTotal();
+    document.getElementById("count_product").innerHTML = cartList.length;
 
 }
 
 // Exercise 2
 function cleanCart() {
     total = 0;
-    cartList.splice(0);
+    //cartList.splice(0);
+    cartList = [];
+    cart = [];
+    document.getElementById("total_price").innerHTML = 0;
+    document.getElementById("cart_list").innerHTML = "";
+    document.getElementById("count_product").innerHTML = 0;
+
 }
 
 // Exercise 3
