@@ -47,119 +47,50 @@ const validarForm = function (e) {
 
     switch (e.target.name) {
         case 'firstName':
-            validarCampos(regex.firstName, e.target, 'firstName', 'errorName');
-            // if (regex.firstName.test(e.target.value)) {
-            //     document.getElementById('group-first-name').classList.add('valid-form');
-            //     document.getElementById('group-first-name').classList.remove('invalid-form');
-            //     document.querySelector('#group-first-name i').classList.add('fa-check-circle');
-            //     document.querySelector('#group-first-name i').classList.remove('fa-times-circle');
-            //     document.getElementById('errorName').classList.add('invalid-feedback');
-
-            // } else {
-            //     document.getElementById('group-first-name').classList.add('invalid-form');
-            //     document.getElementById('group-first-name').classList.remove('valid-form');
-            //     document.querySelector('#group-first-name i').classList.remove('fa-check-circle');
-            //     document.querySelector('#group-first-name i').classList.add('fa-times-circle');
-            //     document.getElementById('errorName').classList.remove('invalid-feedback');
-            // }
+            validarCampos(regex.firstName, e.target, e.target.name, 'errorName');
             break;
         case 'email':
-            validarCampos(regex.email, e.target, 'email', 'errorMail');
-            // if (regex.email.test(e.target.value)) {
-            //     document.getElementById('group-email').classList.add('valid-form');
-            //     document.getElementById('group-email').classList.remove('invalid-form');
-            //     document.querySelector('#group-email i').classList.add('fa-check-circle');
-            //     document.querySelector('#group-email i').classList.remove('fa-times-circle');
-            //     document.getElementById('errorEmail').classList.add('invalid-feedback');
-
-            // } else {
-            //     document.getElementById('group-email').classList.add('invalid-form');
-            //     document.getElementById('group-email').classList.remove('valid-form');
-            //     document.querySelector('#group-email i').classList.remove('fa-check-circle');
-            //     document.querySelector('#group-email i').classList.add('fa-times-circle');
-            //     document.getElementById('errorEmail').classList.remove('invalid-feedback');
-            // }
+            validarCampos(regex.email, e.target, e.target.name, 'errorEmail');
             break;
         case 'address':
-            validarCampos(regex.address, e.target, 'address', 'errorAddress');
-            // if (regex.address.test(e.target.value)) {
-            //     document.getElementById('group-address').classList.add('valid-form');
-            //     document.getElementById('group-address').classList.remove('invalid-form');
-            //     document.querySelector('#group-address i').classList.add('fa-check-circle');
-            //     document.querySelector('#group-address i').classList.remove('fa-times-circle');
-            //     document.getElementById('errorAddress').classList.add('invalid-feedback');
-
-            // } else {
-            //     document.getElementById('group-address').classList.add('invalid-form');
-            //     document.getElementById('group-address').classList.remove('valid-form');
-            //     document.querySelector('#group-address i').classList.remove('fa-check-circle');
-            //     document.querySelector('#group-address i').classList.add('fa-times-circle');
-            //     document.getElementById('errorAddress').classList.remove('invalid-feedback');
-            // }
+            validarCampos(regex.address, e.target, e.target.name, 'errorAddress');
             break;
         case 'password':
-            validarCampos(regex.password, e.target, 'password', 'errorPassword');
-            // if (regex.password.test(e.target.value)) {
-            //     document.getElementById('group-password').classList.add('valid-form');
-            //     document.getElementById('group-password').classList.remove('invalid-form');
-            //     document.querySelector('#group-password i').classList.add('fa-check-circle');
-            //     document.querySelector('#group-password i').classList.remove('fa-times-circle');
-            //     document.getElementById('errorPassword').classList.add('invalid-feedback');
-            // } else {
-            //     document.getElementById('group-password').classList.add('invalid-form');
-            //     document.getElementById('group-password').classList.remove('valid-form');
-            //     document.querySelector('#group-password i').classList.remove('fa-check-circle');
-            //     document.querySelector('#group-password i').classList.add('fa-times-circle');
-            //     document.getElementById('errorPassword').classList.remove('invalid-feedback');
-            // }
+            validarCampos(regex.password, e.target, e.target.name, 'errorPassword');
             break;
         case 'lastName':
-            validarCampos(regex.lastName, e.target, 'lastName', 'errorLastN');
-            // if (regex.lastName.test(e.target.value)) {
-            //     document.getElementById('group-last-name').classList.add('valid-form');
-            //     document.getElementById('group-last-name').classList.remove('invalid-form');
-            //     document.querySelector('#group-last-name i').classList.add('fa-check-circle');
-            //     document.querySelector('#group-last-name i').classList.remove('fa-times-circle');
-            //     document.getElementById('errorLastN').classList.add('invalid-feedback');
-            // } else {
-            //     document.getElementById('group-last-name').classList.add('invalid-form');
-            //     document.getElementById('group-last-name').classList.remove('valid-form');
-            //     document.querySelector('#group-last-name i').classList.remove('fa-check-circle');
-            //     document.querySelector('#group-last-name i').classList.add('fa-times-circle');
-            //     document.getElementById('errorLastN').classList.remove('invalid-feedback');
-            // }
+            validarCampos(regex.lastName, e.target, e.target.name, 'errorLastN');
             break;
         case 'phoneNumber':
-            validarCampos(regex.phoneNumber, e.target, 'phoneNumber', 'errorPhone');
-            // if (regex.phoneNumber.test(e.target.value)) {
-            //     document.getElementById('group-phone-number').classList.add('valid-form');
-            //     document.getElementById('group-phone-number').classList.remove('invalid-form');
-            //     document.querySelector('#group-phone-number i').classList.add('fa-check-circle');
-            //     document.querySelector('#group-phone-number i').classList.remove('fa-times-circle');
-            //     document.getElementById('errorPhone').classList.add('invalid-feedback');
-            // } else {
-            //     document.getElementById('group-phone-number').classList.add('invalid-form');
-            //     document.getElementById('group-phone-number').classList.remove('valid-form');
-            //     document.querySelector('#group-phone-number i').classList.remove('fa-check-circle');
-            //     document.querySelector('#group-phone-number i').classList.add('fa-times-circle');
-            //     document.getElementById('errorPhone').classList.remove('invalid-feedback');
-            // }
+            validarCampos(regex.phoneNumber, e.target, e.target.name, 'errorPhone');
             break;
     }
-
-
 }
 
 for (let i = 0; i < inputs.length; i++) {
     inputs[i].addEventListener('keyup', validarForm);
-    //inputs[i].addEventListener('blur', validarForm);
 }
 
 function validate() {
     if (campos.firstName && campos.lastName && campos.password && campos.phoneNumber && campos.address && campos.email) {
-        alert("OK");
+        form.reset();
+        let validForm = document.querySelectorAll('.valid-form');
+
+        for (let i = 0; i < validForm.length; i++) {
+            console.log('longitud array: ' + validForm.length);
+            validForm[i].classList.remove('valid-form');
+
+        }
+        campos.firstName = false;
+        campos.lastName = false;
+        campos.password = false;
+        campos.phoneNumber = false;
+        campos.address = false;
+        campos.email = false;
+
+        alert("Form submitted");
     } else {
-        alert('error');
+        alert('Fill in all the fields of the form');
     }
 }
 
