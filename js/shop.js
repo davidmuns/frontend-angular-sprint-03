@@ -73,8 +73,6 @@ var total = 0;
 
 var accItems = 0;
 
-
-
 // Exercise 1
 function buy(id) {
     // 1. Loop for to the array products to get the item to add to cart
@@ -87,8 +85,9 @@ function buy(id) {
     // 2. Add found product to the cartList array
     cartList.push(item);
     console.log(cartList);
-    document.getElementById('count_product').innerHTML = ++accItems;
     generateCart();
+    document.getElementById('count_product').innerHTML = ++accItems;
+
 
 }
 
@@ -110,7 +109,7 @@ function calculateTotal() {
     for (let i = 0; i < cart.length; i++) {
         total += cart[i].subtotal;
     }
-    return total;
+    return total.toFixed(2);
 }
 
 // Exercise 4
@@ -128,14 +127,30 @@ function generateCart() {
             cartList[i].subtotal = cartList[i].quantity * cartList[i].price;
         }
     }
+    applyPromotionsCart();
     cartList = [];
     document.getElementById("total_price").innerHTML = calculateTotal();
     console.log(cart);
+
 }
 
 // Exercise 5
 function applyPromotionsCart() {
     // Apply promotions to each item in the array "cart"
+    for (let i = 0; i < cart.length; i++) {
+        console.log("quantity: " + cart[i].quantity);
+        if (cart[i].id === 1 && cart[i].quantity >= 3) {
+            cart[i].price = 10;
+        } else if (cart[i].id === 1 && cart[i].quantity < 2) {
+            cart[i].price = 10.5;
+        }
+
+        if (cart[i].id === 3 && cart[i].quantity >= 10) {
+            cart[i].price = 3.35;
+        } else if (cart[i].id === 3 && cart[i].quantity < 10) {
+            cart[i].price = 5;
+        }
+    }
 }
 
 // Exercise 6
@@ -150,15 +165,19 @@ function printCart() {
         itemName.textContent = cart[i].name;
 
         const itemPrice = document.createElement('td');
-        itemPrice.textContent = cart[i].price;
+        itemPrice.textContent = "$" + cart[i].price;
 
         const itemQuantity = document.createElement('td');
         itemQuantity.textContent = cart[i].quantity;
+
+        const itemTotalPrice = document.createElement('td');
+        itemTotalPrice.textContent = "$" + cart[i].subtotal;
 
         tableTag.appendChild(table);
         table.appendChild(itemName);
         table.appendChild(itemPrice);
         table.appendChild(itemQuantity);
+        table.appendChild(itemTotalPrice);
     }
 }
 
