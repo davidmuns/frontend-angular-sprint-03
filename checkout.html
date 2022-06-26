@@ -83,11 +83,11 @@
 			<div class="row bord p-5 shadow m-5">
 				<div class="col-sm-6">
 					<!-- Group first name -->
-					<div class="mt-3 group-form" id="group-firstName">
+					<div class="mt-3" id="firstName">
 						<label for="fName" class="form-label">First Name:</label>
 						<div class="group-form-input">
 							<input id="fName" class="form-input form-control ml-3" type="text" name="firstName"
-								placeholder="First Name" />
+								title="(only letters allowed)" placeholder="First Name" />
 							<i class="form-icon fas fa-times-circle"></i>
 						</div>
 						<div id="errorName" class="invalid-feedback">This field is required and must have, at least,
@@ -97,7 +97,7 @@
 					</div>
 
 					<!-- Group email -->
-					<div class="mt-3 group-form" id="group-email">
+					<div class="mt-3" id="email">
 						<label for="fEmail" class="form-label">Email:</label>
 						<div class="group-form-input">
 							<input id="fEmail" class="form-input form-control ml-3" type="email" name="email"
@@ -108,7 +108,7 @@
 					</div>
 
 					<!-- Group address -->
-					<div class="mt-3 group-form" id="group-address">
+					<div class="mt-3" id="address">
 						<label for="fAddress" class="form-label">Address:</label>
 						<div class="group-form-input">
 							<input id="fAddress" class="form-input form-control" type="text" name="address"
@@ -123,11 +123,11 @@
 				<div class="col-sm-6">
 
 					<!-- Group last name -->
-					<div class="mt-3 group-form" id="group-lastName">
+					<div class="mt-3" id="lastName">
 						<label for="fLastN" class="form-label">Last Name:</label>
 						<div class="group-form-input">
 							<input id="fLastN" class="form-input form-control" type="text" name="lastName"
-								placeholder="Last Name" minlength="3" />
+								title="(only letters allowed)" placeholder="Last Name" minlength="3" />
 							<i class="form-icon fas fa-times-circle"></i>
 						</div>
 						<div id="errorLastN" class="invalid-feedback">This field is required and must have, at least, 3
@@ -136,7 +136,7 @@
 					</div>
 
 					<!-- Group password -->
-					<div class="mt-3 group-form" id="group-password">
+					<div class="mt-3" id="password">
 						<label for="fPassword" class="form-label">Password:</label>
 						<div class="group-form-input">
 							<input id="fPassword" class="form-input form-control"
@@ -148,7 +148,7 @@
 					</div>
 
 					<!-- Group phone number -->
-					<div class="mt-3 group-form" id="group-phoneNumber">
+					<div class="mt-3" id="phoneNumber">
 						<label for="fPhone" class="form-label">Phone Number:</label>
 						<div class="group-form-input">
 							<input id="fPhone" class="form-input form-control" type="text" name="phoneNumber"
@@ -160,13 +160,13 @@
 					</div>
 				</div>
 				<div class="col-12 mt-4 final">
-					<button type="submit" id="btn" class="p-2 px-4 btn btn-primary shadow-lg" onclick="validate()">
+					<button type="submit" id="btn" class="p-2 px-4 btn btn-primary shadow-lg"
+						onclick="validateSubmit()">
 						<i class="fas fa-cart-arrow-down p-2"></i>Save
 					</button>
 				</div>
 			</div>
 		</form>
-
 	</div>
 
 
