@@ -86,8 +86,6 @@ function buy(id) {
     cartList.push(item);
     generateCart();
     document.getElementById('count_product').innerHTML = ++accItems;
-
-
 }
 
 // Exercise 2
@@ -190,23 +188,22 @@ function printCart() {
 
 // ** Nivell II **
 
-// Exercise 7
+// Exercise 8
 function addToCart(id) {
     // Refactor previous code in order to simplify it 
     // 1. Loop for to the array products to get the item to add to cart
     // 2. Add found product to the cart array or update its quantity in case it has been added previously.
 }
 
-// Exercise 8
+// Exercise 9
 function removeFromCart(id) {
     // 1. Loop for to the array products to get the item to add to cart
     // 2. Add found product to the cartList array
 }
 
 function open_modal() {
-    console.log("Open Modal");
-    var totalWithDiscount = calculateTotal();
-    document.getElementById("total_price").innerHTML = totalWithDiscount.toFixed(2);
+    document.getElementById("cart_list").innerHTML = "";
+    document.getElementById("total_price").innerHTML = calculateTotal().toFixed(2);
     printCart();
 }
 
