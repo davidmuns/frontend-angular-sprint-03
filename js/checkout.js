@@ -19,9 +19,9 @@ const fields = {
     address: false
 }
 
-form.addEventListener('submit', (e) => {
-    e.preventDefault()
-});
+// form.addEventListener('submit', (e) => {
+//     e.preventDefault()
+// });
 
 const validateField = function (expression, input, field, error) {
     if (expression.test(input.value)) {
