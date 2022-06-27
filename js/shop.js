@@ -184,8 +184,11 @@ function printCart() {
         const subtotal = document.createElement('td');
         subtotal.textContent = "$" + (cart[i].subtotal).toFixed(2);
 
-        const removeBtn = document.createElement('td');
-        removeBtn.innerHTML = '<button class="btn btn-outline-dark" onclick="removeFromCart(' + cart[i].id + ')"><i class="fa fa-minus-circle"></button>';
+        const removeItemBtn = document.createElement('td');
+        removeItemBtn.innerHTML = '<button class="btn btn-outline-dark" onclick="removeFromCart(' + cart[i].id + ')"><i class="fa fa-minus-circle"></button>';
+
+        const addItemBtn = document.createElement('td');
+        addItemBtn.innerHTML = '<button class="btn btn-outline-dark" onclick="addItemToModal(' + cart[i].id + ')"><i class="fa fa-plus-circle"></button>';
 
         const subtotalWithDiscout = document.createElement('td');
         subtotalWithDiscout.textContent = "$" + (cart[i].subtotalWithDiscout).toFixed(2);
@@ -196,7 +199,9 @@ function printCart() {
         table.appendChild(itemQuantity);
         table.appendChild(subtotal);
         table.appendChild(subtotalWithDiscout);
-        table.appendChild(removeBtn);
+        table.appendChild(addItemBtn);
+        table.appendChild(removeItemBtn);
+
     }
 }
 
@@ -253,6 +258,11 @@ function removeFromCart(id) {
         itemDisplay.innerHTML = --accItems;
         applyPromotionsCart();
     }
+    open_modal();
+}
+
+function addItemToModal(id) {
+    buy(id);
     open_modal();
 }
 
