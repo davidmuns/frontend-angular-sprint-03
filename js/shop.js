@@ -185,10 +185,10 @@ function printCart() {
         subtotal.textContent = "$" + (cart[i].subtotal).toFixed(2);
 
         const removeItemBtn = document.createElement('td');
-        removeItemBtn.innerHTML = '<button class="btn btn-outline-dark" onclick="removeFromCart(' + cart[i].id + ')"><i class="fa fa-minus-circle"></button>';
+        removeItemBtn.innerHTML = '<button class="btn btn-outline-secondary" onclick="removeFromCart(' + cart[i].id + ')"><i class="fa fa-minus-circle"></button>';
 
         const addItemBtn = document.createElement('td');
-        addItemBtn.innerHTML = '<button class="btn btn-outline-dark" onclick="addItemToModal(' + cart[i].id + ')"><i class="fa fa-plus-circle"></button>';
+        addItemBtn.innerHTML = '<button class="btn btn-outline-primary" onclick="addItemToModal(' + cart[i].id + ')"><i class="fa fa-plus-circle"></button>';
 
         const subtotalWithDiscout = document.createElement('td');
         subtotalWithDiscout.textContent = "$" + (cart[i].subtotalWithDiscout).toFixed(2);
