@@ -185,7 +185,7 @@ function printCart() {
         subtotal.textContent = "$" + (cart[i].subtotal).toFixed(2);
 
         const removeBtn = document.createElement('td');
-        removeBtn.innerHTML = '<button class="btn btn-outline-dark" onclick="removeFromCart(' + cart[i].id + ')"><i class="fa fa-trash"></button>';
+        removeBtn.innerHTML = '<button class="btn btn-outline-dark" onclick="removeFromCart(' + cart[i].id + ')"><i class="fa fa-minus-circle"></button>';
 
         const subtotalWithDiscout = document.createElement('td');
         subtotalWithDiscout.textContent = "$" + (cart[i].subtotalWithDiscout).toFixed(2);
