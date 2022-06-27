@@ -1,3 +1,5 @@
+
+// Nivel 1
 // If you have time, you can move this variable "products" to a json or js file and load the data in this js. It will look more professional
 var products = [];
 
@@ -198,7 +200,7 @@ function printCart() {
     }
 }
 
-// ** Nivell II **
+// Nivel 2 
 
 // Exercise 8
 function addToCart(id) {
