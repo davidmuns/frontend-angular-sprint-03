@@ -1,3 +1,6 @@
+
+// Nivel 1
+
 // Exercise 7
 const form = document.getElementById('form');
 const inputs = document.querySelectorAll('#form input');
