@@ -142,15 +142,19 @@ function calculateTotal() {
 function applyPromotionsCart() {
     // Apply promotions to each item in the array "cart"
     for (let i = 0; i < cart.length; i++) {
-        if (cart[i].id === 1 && cart[i].quantity >= 3) {
+        if (cart[i].id === 1 && cart[i].quantity >= 4) {
             cart[i].subtotalWithDiscout = cart[i].quantity * 10;
-        } else if (cart[i].id === 1 && cart[i].quantity < 2) {
-            cart[i].subtotalWithDiscout = cart[i].quantity * 10.5;
+        } else if (cart[i].id === 1 && cart[i].quantity < 4) {
+            cart[i].subtotalWithDiscout = cart[i].subtotal;
         }
 
         if (cart[i].id === 3 && cart[i].quantity >= 10) {
             cart[i].subtotalWithDiscout = (cart[i].subtotal) * 2 / 3;
         } else if (cart[i].id === 3 && cart[i].quantity < 10) {
+            cart[i].subtotalWithDiscout = cart[i].subtotal;
+        }
+
+        if (cart[i].id == 2 || cart[i].id > 3) {
             cart[i].subtotalWithDiscout = cart[i].subtotal;
         }
 
@@ -176,7 +180,10 @@ function printCart() {
         itemQuantity.textContent = cart[i].quantity;
 
         const subtotal = document.createElement('td');
-        subtotal.textContent = "$" + cart[i].subtotal;
+        subtotal.textContent = "$" + (cart[i].subtotal).toFixed(2);
+
+        const removeBtn = document.createElement('td');
+        removeBtn.innerHTML = '<button class="btn btn-outline-dark" onclick="removeFromCart(' + cart[i].id + ')"><i class="fa fa-trash"></button>';
 
         const subtotalWithDiscout = document.createElement('td');
         subtotalWithDiscout.textContent = "$" + (cart[i].subtotalWithDiscout).toFixed(2);
@@ -187,6 +194,7 @@ function printCart() {
         table.appendChild(itemQuantity);
         table.appendChild(subtotal);
         table.appendChild(subtotalWithDiscout);
+        table.appendChild(removeBtn);
     }
 }
 
@@ -223,8 +231,27 @@ function addToCart(id) {
 
 // Exercise 9
 function removeFromCart(id) {
-    // 1. Loop for to the array products to get the item to add to cart
-    // 2. Add found product to the cartList array
+    var index;
+    var item;
+    const itemDisplay = document.getElementById('count_product');
+    for (let i = 0; i < cart.length; i++) {
+        if (cart[i].id == id) {
+            index = i;
+            item = cart[i];
+        }
+    }
+    if (item.quantity == 1) {
+        cart.splice(index, 1);
+        itemDisplay.innerHTML = --accItems;
+
+    } else {
+
+        item.quantity -= 1;
+        item.subtotal -= item.price;
+        itemDisplay.innerHTML = --accItems;
+        applyPromotionsCart();
+    }
+    open_modal();
 }
 
 function open_modal() {
