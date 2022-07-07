@@ -1,5 +1,18 @@
 # Sprint 3 IT Academy | Shop
 
+## Tutoriales youtube
+
+# DOM
+https://www.youtube.com/watch?v=11MEBKljhFc
+
+# Validar formularios con javascript
+ 
+https://www.youtube.com/watch?v=s3pC93LgP18
+
+# Diseñar formularios con javascript
+
+https://www.youtube.com/watch?v=cEKDyzoTXb4
+
 ## Introduction
 
 A company in the e-commerce sector has asked us for a web application that allows them to offer the purchase of their products through the internet.
