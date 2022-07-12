@@ -1,9 +1,10 @@
 # Sprint 3 IT Academy | Shop
 
-## Tutoriales youtube
+## Resources of interest:
 
 # DOM
-https://www.youtube.com/watch?v=11MEBKljhFc
+- https://www.youtube.com/watch?v=11MEBKljhFc
+- https://www.youtube.com/watch?v=5fb2aPlgoys&ab_channel=freeCodeCamp.org
 
 # Validar formularios con javascript
  
